@@ -57,6 +57,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnLimpar = findViewById(R.id.btnLimpar);
-
+        btnLimpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editNome.setText("");
+                editTelefone.setText("");
+                editEmail.setText("");
+                editCidade.setText("");
+                checkBox.setChecked(false);
+                rdMasc.setChecked(false);
+                rdFemin.setChecked(false);
+                spinnerUf.setSelection(0);
+            }
+        });
     }
 }

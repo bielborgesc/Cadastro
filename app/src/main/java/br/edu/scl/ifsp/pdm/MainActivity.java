@@ -1,11 +1,14 @@
 package br.edu.scl.ifsp.pdm;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +42,20 @@ public class MainActivity extends AppCompatActivity {
         spinnerUf = findViewById(R.id.spinnerUf);
 
         btnSalvar = findViewById(R.id.btnSalvar);
+        btnSalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Formulario form = new Formulario();
+                form.setNome(editNome.getText().toString());
+                form.setTelefone(editTelefone.getText().toString());
+                form.setEmail(editEmail.getText().toString());
+                form.setIngressar(checkBox.isChecked());
+                form.setSexo(String.valueOf(rdFemin.isChecked() ? rdFemin.getText() : rdMasc.getText()));
+                form.setUf(((TextView) spinnerUf.getSelectedView()).getText().toString());
+                Toast.makeText(MainActivity.this, form.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
         btnLimpar = findViewById(R.id.btnLimpar);
 
     }

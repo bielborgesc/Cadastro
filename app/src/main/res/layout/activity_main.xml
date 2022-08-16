@@ -57,9 +57,9 @@
         android:layout_height="wrap_content"
         android:text="Sexo" />
 
-    <LinearLayout
-        android:layout_width="410dp"
-        android:layout_height="35dp"
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Feminino" />
-    </LinearLayout>
+    </RadioGroup>
 
     <TextView
         android:id="@+id/txtCidade"
@@ -99,7 +99,8 @@
     <Spinner
         android:id="@+id/spinnerUf"
         android:layout_width="match_parent"
-        android:layout_height="35dp" />
+        android:layout_height="35dp"
+        android:entries="@array/ufs" />
 
     <LinearLayout
         android:layout_width="match_parent"
